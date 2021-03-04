@@ -22,8 +22,6 @@ void dibujaPantallaJuego() {
   bJugar.setEnabled(false);
   bConfig.setEnabled(false);
   dibujoTablasPiezas();
-  t.dibujaTablero(width/3, 0);
-  t.dibujaPieza(p, width/3, 0);
   dibujoTablaPuntuaciones();
 }
 

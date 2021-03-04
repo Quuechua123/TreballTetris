@@ -13,22 +13,21 @@ void valoresInicialesTeclas() {
 void keyPressed() {
   if (key==teclaRight) {
     println("Derecha");
-    p.moverDerecha(t);
-    println(p.columna);
+    figActual.moverDerecha(t);
   } else if (key==teclaLeft) {
     println("Izquierda");
-    p.moverIzquierda(t);
+    figActual.moverIzquierda(t);
   } else if (key==rotaRight) {
     println("Rotar Derecha");
-    p.rota(t);
+    figActual.rota();
   } else if (key==rotaLeft) {
     println("Rotar Izquierda");
   } else if (key==caidaSuave) {
     println("Suave");
-    p.moverBajar(t);
+    figActual.moverAbajo(t);
   } else if (key==caidaRapida) {
     println("Rapida");
-    p.moverBajar(t);
+    figActual.moverAbajo(t);
   } else if (key==guardarPieza) {
     println("Guardar");
   }

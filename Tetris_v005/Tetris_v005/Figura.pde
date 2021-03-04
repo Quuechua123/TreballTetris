@@ -1,19 +1,23 @@
 class Figura {
   
-  color c;
   
   int[][] matriz;
   
   int fila, col;
+  int tipo;
   
-  Figura(int[][] matriz, color c){
+  Figura(int[][] matriz, int t){
     this.matriz = copiaMatriz(matriz);
-    this.c = c;
+    this.tipo = t;
   }
   
   void setPosicio(int f, int c){
     this.fila = f;
     this.col = c;
+  }
+  
+  void setTipo(int tipo){
+    this.tipo = tipo;
   }
   
   int getMaxCol(){
@@ -68,7 +72,7 @@ class Figura {
     
     int df = nf - this.fila;
     
-    // Si és la fila superior
+    //fila superior
     if(nf==df){
       for(int c=0; c<matriz[0].length; c++){
         matriz[0][c] = 0;
@@ -81,17 +85,17 @@ class Figura {
           matriz[df][c] = matriz[df-1][c];
         }
       }
-      // Buidam la 1era fila
+      // Vaciar la 1era fila
       for(int c=0; c<matriz[0].length; c++){
         matriz[0][c] = 0;
       }
     }
   }
   
-  boolean posicioLliure(Tablero t, int ff, int cf){
+  boolean posicionLibre(Tablero t, int ff, int cf){
     for(int f=0; f<matriz.length; f++){
       for(int c=0; c<matriz[0].length; c++){
-        println("MIRANT FILA: "+(ff+f)+", I COL:"+(cf+c));
+        println("MIRANDO FILA: "+(ff+f)+", I COL:"+(cf+c));
         if(matriz[f][c]==1 && t.tablero[ff+f][cf+c]==1){
           println("OCUPADA");
           return false;
@@ -101,31 +105,31 @@ class Figura {
     return true;
   }
   
-  void mouEsquerra(Tablero t){
+  void moverIzquierda(Tablero t){
     if(this.col + this.getMinCol() > 0){
       println("COL:"+this.col+",FILA: "+this.fila);
       
       int newCol = this.col - 1;
       
       println("COL DESTI:"+newCol);
-      if(posicioLliure(t, this.fila, newCol)){
-        println("SE POT MOURE");
+      if(posicionLibre(t, this.fila, newCol)){
+        println("SE PUEDE MOVER");
         this.col--;
       }
     }
   }
   
-  void mouDreta(Tablero t){
+  void moverDerecha(Tablero t){
     if(this.col + this.getMaxCol() < t.numCols - 1){
       this.col++;
     }
   }
   
-  boolean mouBaix(Tablero t){
+  boolean moverAbajo(Tablero t){
     
     if(this.fila + this.getMaxFil() < t.numFils - 1){
       int newFila = this.fila + 1;
-      if(posicioLliure(t, newFila, this.col)){
+      if(posicionLibre(t, newFila, this.col)){
         this.fila++;
         return true;
       }

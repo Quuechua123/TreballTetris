@@ -12,7 +12,9 @@ enum PANTALLA {
 PANTALLA pantalla = PANTALLA.MENU;
 
 Tablero t;
-Figura p;
+Figura figActual;
+boolean gameOver = false;
+int numLinies = 0;
 
 void setup() {
   size(1920, 1080);
@@ -29,7 +31,7 @@ void setup() {
 
   //p.dibujaPieza();
 
-  t = new Tablero(width/3, height-2);
+  //t = new Tablero(width/3, height-2);
   
 }
   
@@ -46,6 +48,7 @@ void draw() {
     break;
   case JUGAR:
     dibujaPantallaJuego(); 
+    jugar();
     break;
   case CONFIG: 
     dibujaPantallaAjustes(); 
@@ -54,3 +57,53 @@ void draw() {
 
   updateCursor();
 }
+
+void jugar(){
+   background(255);
+  pushMatrix();
+      translate(t.x, t.y);
+    // Dibuixa el tauler
+    t.dibuja();
+      
+    // Dibuixa la figura actual
+    t.dibuja(figActual);
+  
+  popMatrix();
+    
+  // Bucle del juego
+  if(!gameOver){
+    if(!figActual.moverAbajo(t)){
+      println("Figura bloqueada!!");
+      if(figActual.fila==0){
+        println("Partida acabada!!");
+        gameOver = true;
+      }
+      else{
+        // Añadir figura al tauler
+        t.anadirFigura(figActual);
+        t.aplica(figActual);
+        
+        // Comprovar linies
+        boolean[] llenas = t.comprovarFilasLlenas();
+        for(int f=0; f<llenas.length; f++){
+          if(llenas[f]==true){
+            t.bajarFigurasAntesDe(f);
+            numLinies++;
+          }
+        }
+        
+        // Crear nueva figura aleatoria
+        figActual = creaFiguraRandom();
+      }
+    }
+  }
+  else {
+    // Si la partida ha acabado
+    fill(0); textAlign(CENTER); textSize(50);
+    text("GAME OVER", width/2, height/2);
+    // Número de figuras colocadas
+    text("FIGURAS:"+t.getNumFiguras(), width/2, height/2 + 100);
+    // Número de líneas
+    text("LINEAS:"+numLinies, width/2, height/2+200);
+  }
+ }
