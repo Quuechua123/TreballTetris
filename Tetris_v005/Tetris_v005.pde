@@ -3,7 +3,7 @@
 import de.bezier.data.sql.*;
 
 // Objecto de connexión a la BBDD
-MySQL msql;
+//MySQL msql;
 
 enum PANTALLA {
   MENU, JUGAR, CONFIG
@@ -22,7 +22,7 @@ void setup() {
   textSize(18);   // Tamaño del texto
   rectMode(CENTER);
   
-  connecta();
+  //connecta();
   
   loadMedia();
   setGUI();
