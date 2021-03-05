@@ -43,7 +43,7 @@ String[][] info = {
 // Creación de los elementos de la GUI
 void setGUI() {
   initButtons();
-  crearTabla();
+  //crearTabla();
   initSelect();
   valoresInicialesTeclas();
   initCheckBox();

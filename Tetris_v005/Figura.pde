@@ -96,7 +96,7 @@ class Figura {
     for(int f=0; f<matriz.length; f++){
       for(int c=0; c<matriz[0].length; c++){
         println("MIRANDO FILA: "+(ff+f)+", I COL:"+(cf+c));
-        if(matriz[f][c]==1 && t.tablero[ff+f][cf+c]==1){
+        if(matriz[f][c]==1 && t.tablero[ff+f][cf+c]!=0){
           println("OCUPADA");
           return false;
         }
@@ -137,13 +137,22 @@ class Figura {
     return false;
   }
   
-  void rota(){
+  void rota(int sentit){
     
     int[][] q = this.copia();
     
-    for(int f=0; f<matriz.length; f++){
-      for(int c=0; c<matriz[0].length; c++){
-        matriz[f][c]=q[matriz.length - c -1][f];
+    if(sentit==0){
+      for(int f=0; f<matriz.length; f++){
+        for(int c=0; c<matriz[0].length; c++){
+          matriz[f][c]=q[matriz.length - c -1][f];
+        }
+      }
+    }
+    else {
+       for(int f=0; f<matriz.length; f++){
+        for(int c=0; c<matriz[0].length; c++){
+          matriz[f][c]=q[c][matriz.length - f - 1];
+        }
       }
     }
   }

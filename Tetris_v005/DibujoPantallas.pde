@@ -2,7 +2,7 @@
 
 void dibujaPantallaMenu() {
   pushStyle();
-  dibujoTablaPuntuaciones();
+  //dibujoTablaPuntuaciones();
   dibujoBotones();
   dibujoLogo();
   Seleccion.display();

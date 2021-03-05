@@ -27,7 +27,7 @@ void dibujoZonaCentral() {
 //Tabla de Putnuaciones
 
 void dibujoTablaPuntuaciones() {
-  tabla.display(width/2-870, 500, tableWidth, tableHeight);
+  //tabla.display(width/2-870, 500, tableWidth, tableHeight);
 }
 
 //Tablas de pieza guardada y piezas siguientes

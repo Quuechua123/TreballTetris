@@ -19,9 +19,9 @@ void keyPressed() {
     figActual.moverIzquierda(t);
   } else if (key==rotaRight) {
     println("Rotar Derecha");
-    figActual.rota();
+    figActual.rota(0);
   } else if (key==rotaLeft) {
-    println("Rotar Izquierda");
+    figActual.rota(1);
   } else if (key==caidaSuave) {
     println("Suave");
     figActual.moverAbajo(t);
