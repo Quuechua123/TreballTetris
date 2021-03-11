@@ -3,7 +3,7 @@
 //Zona central
 void dibujoZonaCentral() {
   pushStyle();
-  fill(50, 50, 200);
+  fill(58, 183, 149);
   rect(width/2, 250, centerWidth, centerHeight);
   textFont(font1); 
   fill(0); 

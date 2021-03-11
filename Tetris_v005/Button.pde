@@ -17,8 +17,8 @@ class Button {
     this.w = w;
     this.h = h;
     this.enabled = true;
-    fillColor = color(255);
-    fillColorOver = color(255, 0, 100);
+    fillColor = color(63, 157, 255);
+    fillColorOver = color(255,89,100);
     fillColorDisabled = color(150);
     strokeColor = color(0);
   }
