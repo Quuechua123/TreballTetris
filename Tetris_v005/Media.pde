@@ -3,7 +3,7 @@ import processing.sound.*;
 // Imégenes
 PImage imgLogo, imgFondo, iconoMas, iconoMenos;
 //Load Fonts
-PFont font1;
+PFont font1, font2;
 // Audios
 SoundFile audio1, audio2;
 
@@ -25,6 +25,7 @@ void loadImages() {
 //carga fuentes
 void loadFonts() {
   font1 = createFont("../DATA/Fuente/novamono.ttf", 48);
+  font2 = createFont("../DATA/Fuente/game_over.ttf", 200);
 }
 
 

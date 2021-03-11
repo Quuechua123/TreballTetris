@@ -102,13 +102,16 @@ void jugar() {
     }
   } else {
     // Si la partida ha acabado
+    pushStyle();
     fill(0); 
-    textAlign(CENTER); 
-    textSize(50);
-    text("GAME OVER", width/2, height/2);
+    textAlign(CENTER);
+    textSize(200);
+    textFont(font2);
+    text("GAME OVER", width/2-40, height/3);
     // Número de figuras colocadas
-    text("FIGURAS:"+t.getNumFiguras(), width/2, height/2 + 100);
+    text("FIGURAS:"+t.getNumFiguras(), width/2-40, height/3 + 150);
     // Número de líneas
-    text("LINEAS:"+numLinies, width/2, height/2+200);
+    text("LINEAS:"+numLinies, width/2-40, height/3+300);
+    popStyle();
   }
 }
