@@ -7,7 +7,8 @@ class Select {
   boolean collapsed = true;  
   boolean enabled;           
 
-  float lineSpace = 15;     
+  float lineSpace = 15;    
+  float sizeText = 14;
 
   Select(String[] texts, float x, float y, float w, float h) {
 
@@ -20,7 +21,15 @@ class Select {
     this.enabled = true;
     this.collapsed = true;
   }
+  
+  void setTextSize(float f){
+    this.sizeText = f;
+  }
 
+  void setLineText(float f){
+    this.lineSpace = f;
+  }
+  
   void display() {
     pushStyle();
     rectMode(CORNER);
@@ -37,9 +46,9 @@ class Select {
     triangle(x + w - 25, y+5, x + w - 15, y + 25, x + w - 5, y+5);
 
     fill(0); 
-    textSize(14); 
+    textSize(sizeText); 
     textAlign(LEFT);
-    text(selectedValue, x + 10, y + 20);
+    text(selectedValue, x + 10, y + 20 + h/3);
 
     if (!this.collapsed) {
 
@@ -56,7 +65,7 @@ class Select {
         }
 
         fill(0);
-        text(texts[i], x + 10, y + h + 25 + (h + lineSpace)*i);
+        text(texts[i], x + 10, y + h + h/3 + 25 + (h + lineSpace)*i);
       }
     }
     popStyle();

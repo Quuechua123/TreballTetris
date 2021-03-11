@@ -10,13 +10,13 @@ final int T  = 6;
 final int S  = 7;
 
 // Colores de las figuras
-color colorVacio = color(255);
-color colorF = color(0,255,255);
-color colorS = color(0,0,255);
-color colorLL = color(255,0,255);
-color colorLR = color(155,0,155);
-color colorT = color(0,255,0);
-color colorZR = color(255,255,0);
-color colorZL = color(155,155,0);
+color colorVacio = color(255, 252, 255);
+color colorF = color(86, 203, 249);
+color colorS = color(255, 214, 57);
+color colorLL = color(108, 174, 117);
+color colorLR = color(174, 117, 108);
+color colorT = color(188, 74, 211);
+color colorZR = color(255, 22, 84);
+color colorZL = color(22, 84, 255);
 
-color[] colors = {colorVacio, colorF, colorLR, colorLL, colorZR, colorZL, colorT ,colorS};
+color[] colors = {colorVacio, colorF, colorLR, colorLL, colorZR, colorZL, colorT, colorS};

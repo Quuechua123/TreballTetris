@@ -31,5 +31,5 @@ void loadFonts() {
 // Carga de los audios
 void loadSounds() {
   audio1 = new SoundFile(this, "../DATA/audios/click.mp3");
-  //audio2 = new SoundFile(this, "../DATA/audios/aceptar.mp3");
+  audio2 = new SoundFile(this, "../DATA/audios/Soundtrack.mp3");
 }

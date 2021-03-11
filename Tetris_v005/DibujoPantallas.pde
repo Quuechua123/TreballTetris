@@ -6,13 +6,6 @@ void dibujaPantallaMenu() {
   dibujoBotones();
   dibujoLogo();
   Seleccion.display();
-  fill(255); 
-  rectMode(CORNER);
-  rect(width/2-220, 625, 270, buttonH2);
-  fill(0); 
-  textSize(28); 
-  textAlign(LEFT);
-  text("Selecciona el Modo", width/2-210, 670);
   popStyle();
 }
 

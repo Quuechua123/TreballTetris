@@ -17,10 +17,10 @@ boolean gameOver = false;
 int numLinies = 0;
 FigList figs;
 
-int speed = 10;
+int speed = 3;
 
 void setup() {
-  fullScreen();
+  size(1920, 1080);
   textAlign(CENTER);  // Alineación del texto
   textSize(18);   // Tamaño del texto
   rectMode(CENTER);

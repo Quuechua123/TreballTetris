@@ -33,6 +33,7 @@ void dibujoTablaPuntuaciones() {
 //Tablas de pieza guardada y piezas siguientes
 void dibujoTablasPiezas() {
   pushStyle();
+  textFont(font1);
   fill(0);
   text("Pieza Guardada", width/2-670, 90);
   rect(width/2-670, 270, piezaExWidth, piezaExHeight);

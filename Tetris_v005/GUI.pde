@@ -68,7 +68,9 @@ void initSelect() {
   softDrop = new Select(selectValues, width/2, 400, selectW, selectH);
   hardDrop  = new Select(selectValues, width/2, 450, selectW, selectH);
   hold = new Select(selectValues, width/2, 500, selectW, selectH);
-  Seleccion = new Select(selectValues2, width/2+40, 625, 200, buttonH2); 
+  Seleccion = new Select(selectValues2, width/2-220, 625, 450, buttonH2); 
+  Seleccion.setTextSize(28);
+  Seleccion.setLineText(5);
 }
 
 void initCheckBox() {
