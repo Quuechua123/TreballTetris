@@ -17,9 +17,7 @@ void dibujoZonaCentral() {
   text("Caida Suave", width/2-150, 420);
   text("Caida Rápida", width/2-150, 470);
   text("Guardar pieza", width/2-150, 520);
-  text("Pieza Fantasma", width/2-100, 620);
   text("Volumen de la Música", width/2-130, 730);
-  text("Tipo de Música", width/2-150, 800);
 
   popStyle();
 }
@@ -27,7 +25,9 @@ void dibujoZonaCentral() {
 //Tabla de Putnuaciones
 
 void dibujoTablaPuntuaciones() {
-  //tabla.display(width/2-870, 500, tableWidth, tableHeight);
+  pushStyle();
+
+  tabla.display(width/2-900, 500, 600, tableHeight);
 }
 
 //Tablas de pieza guardada y piezas siguientes

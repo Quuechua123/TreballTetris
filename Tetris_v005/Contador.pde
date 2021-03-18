@@ -3,7 +3,7 @@ class Contador {
   // Valor del comptador
   int value = 100;
   int minValue= 0, maxValue = 100;
-  int stepValue = 1;
+  int stepValue = 10;
 
   // Propietats d'un counter:
   float x, y, w, h;  // Posició i dimensions

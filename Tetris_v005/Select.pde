@@ -21,15 +21,15 @@ class Select {
     this.enabled = true;
     this.collapsed = true;
   }
-  
-  void setTextSize(float f){
+
+  void setTextSize(float f) {
     this.sizeText = f;
   }
 
-  void setLineText(float f){
+  void setLineText(float f) {
     this.lineSpace = f;
   }
-  
+
   void display() {
     pushStyle();
     rectMode(CORNER);

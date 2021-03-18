@@ -7,7 +7,6 @@ CheckBox piezaFantasma;
 Contador volumen, tipoMusica;
 
 
-
 //Valores Contadores
 float contadorW = 150, contadorH = 50;
 
@@ -23,27 +22,18 @@ Tabla tabla;
 int buttonH = 100, buttonW = 450;
 int buttonH2 = 100, buttonW2 = 100;
 
-float tableW = 400, tableH = 500;
+float tableW = 750, tableH = 500;
 int filas = 10, columnas = 3;
 String[] headers = {"Nombre", "Puntuación", "Fecha"};
-float[] colWidths = {20, 40, 40};
-String[][] info = {
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-  {"AAAA", "1.000.252", "5/4/2020"}, 
-};
+float[] colWidths = {25, 25, 50};
+
+
+
 
 // Creación de los elementos de la GUI
 void setGUI() {
   initButtons();
-  //crearTabla();
+  crearTabla();
   initSelect();
   valoresInicialesTeclas();
   initCheckBox();
@@ -79,9 +69,6 @@ void initCheckBox() {
 
 void initContador() {
   volumen = new Contador(iconoMas, iconoMenos, width/2+50, 700, contadorW, contadorH);
-  tipoMusica = new Contador(iconoMas, iconoMenos, width/2+50, 770, contadorW, contadorH);
-  tipoMusica.setValues(0, 3);
-  tipoMusica.setInitialValue(3);
 }
 
 // Activar els botons del menú

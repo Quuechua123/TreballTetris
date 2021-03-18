@@ -38,7 +38,10 @@ void mousePressed() {
   if (bJugar.mouseOverButton() && bJugar.enabled) {
     pantalla = PANTALLA.JUGAR;
     audio1.play();
-    audio2.loop(); 
+    float vol = volumen.value /100.0f;
+    println(vol);
+    audio2.amp(vol);
+    audio2.loop();
   } else if (bConfig.mouseOverButton() && bConfig.enabled) {
     pantalla = PANTALLA.CONFIG;
     audio1.play();
@@ -49,8 +52,6 @@ void mousePressed() {
   } else if (moveRight.mouseOverSelect() && moveRight.enabled) {
     if (!moveRight.collapsed) {
       moveRight.update();
-      //   println(moveRight.selectedValue);
-      //  teclaRight = moveRight.selectedValue.charAt(0);
     }
     moveRight.toggle();
   } else if (moveLeft.mouseOverSelect() && moveLeft.enabled) {
@@ -88,27 +89,11 @@ void mousePressed() {
       Seleccion.update();
     }
     Seleccion.toggle();
-    if(Seleccion.selectedValue!=""){
+    if (Seleccion.selectedValue!="") {
       bJugar.setEnabled(true);
       bConfig.setEnabled(true);
     }
-  } else if (piezaFantasma.onMouseOver()) {
-    piezaFantasma.toggle();
-  } else {
+  } else if (volumen.mouseOverButtons()) {
     volumen.update();
-    tipoMusica.update();
-  }
-}
-
-
-// Modifica el cursor
-void updateCursor() {
-
-  if ((bJugar.mouseOverButton() && bJugar.enabled)||
-    (bConfig.mouseOverButton() && bConfig.enabled))
-  {
-    cursor(HAND);
-  } else {
-    cursor(ARROW);
   }
 }

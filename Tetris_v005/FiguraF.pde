@@ -1,55 +1,48 @@
 class FiguraF extends Figura {
-   
-  FiguraF(){
+
+  FiguraF() {
     super(matrizF, F);
   }
-  
 }
 
 class FiguraLR extends Figura {
-   
-  FiguraLR(){
+
+  FiguraLR() {
     super(matrizLR, LR);
   }
-  
 }
 
 class FiguraLL extends Figura {
-   
-  FiguraLL(){
+
+  FiguraLL() {
     super(matrizLL, LL);
   }
-  
 }
 
 class FiguraS extends Figura {
-   
-  FiguraS(){
+
+  FiguraS() {
     super(matrizS, S);
   }
-  
 }
 
 class FiguraT extends Figura {
-   
-  FiguraT(){
+
+  FiguraT() {
     super(matrizT, T);
   }
-  
 }
 
 class FiguraZR extends Figura {
-   
-  FiguraZR(){
+
+  FiguraZR() {
     super(matrizZR, ZR);
   }
-  
 }
 
 class FiguraZL extends Figura {
-   
-  FiguraZL(){
+
+  FiguraZL() {
     super(matrizZL, ZL);
   }
-  
 }

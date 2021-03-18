@@ -1,9 +1,9 @@
 
-// Libreria de MySQL y Processing
+//Libreria de MySQL y Processing
 import de.bezier.data.sql.*;
 
-// Objecto de connexión a la BBDD
-MySQL msql;
+
+Tabla ta;
 
 enum PANTALLA {
   MENU, JUGAR, CONFIG
@@ -25,16 +25,15 @@ void setup() {
   textSize(18);   // Tamaño del texto
   rectMode(CENTER);
 
-  //connecta();
+  t = new Tablero(10, 20, width/2-300, 0, 600, height);
+
+  conecta();
 
   loadMedia();
   setGUI();
 
-  t = new Tablero(10, 20, width/2-300, 0, 600, height);
-
   figs = new FigList();
   figActual = figs.nextFigura();
-
 }
 
 
@@ -55,9 +54,7 @@ void draw() {
   case CONFIG: 
     dibujaPantallaAjustes(); 
     break;
-  } 
-
-  updateCursor();
+  }
 }
 
 void jugar() {
@@ -74,7 +71,7 @@ void jugar() {
 
   // Bucle del juego
   if (!gameOver) {
-    
+
     if (frameCount%speed == 0 && !figActual.moverAbajo(t)) {
       println("Figura bloqueada!!");
       if (figActual.fila==0) {
@@ -93,10 +90,10 @@ void jugar() {
             numLinies++;
           }
         }
-          
-          if(figs.isEmpty()){
-            figs = new FigList();
-          }
+
+        if (figs.isEmpty()) {
+          figs = new FigList();
+        }
         figActual = figs.nextFigura();
       }
     }

@@ -2,7 +2,7 @@
 
 void dibujaPantallaMenu() {
   pushStyle();
-  //dibujoTablaPuntuaciones();
+  dibujoTablaPuntuaciones();
   dibujoBotones();
   dibujoLogo();
   Seleccion.display();
@@ -15,7 +15,6 @@ void dibujaPantallaJuego() {
   bJugar.setEnabled(false);
   bConfig.setEnabled(false);
   dibujoTablasPiezas();
-  dibujoTablaPuntuaciones();
 }
 
 void dibujaPantallaAjustes() {
@@ -24,9 +23,7 @@ void dibujaPantallaAjustes() {
   bJugar.setEnabled(false);
   bConfig.setEnabled(false);
   dibujoZonaCentral();
-  piezaFantasma.display();
   volumen.display();
-  tipoMusica.display();
   hold.display();
   hardDrop.display();
   softDrop.display();

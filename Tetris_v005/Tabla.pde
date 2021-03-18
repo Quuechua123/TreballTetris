@@ -1,18 +1,18 @@
 class Tabla {
 
-  String[] tableHeaders;
+  String[] tableHeaders;  
   String[][] tableData;    
-  float[] columnWidths;    
+  float[] columnWidths;   
 
-  int numCols, numRows;  
+  int numCols, numRows; 
 
-
+  // Constructor
   Tabla(int nr, int nc) {
     this.numRows = nr;
     this.numCols = nc;
   }
 
-
+  // Setters
 
   void setHeaders(String[] h) {
     this.tableHeaders = h;
@@ -30,23 +30,23 @@ class Tabla {
     this.columnWidths = w;
   }
 
-
+  // Dibuixa taula
   void display(float x, float y, float w, float h) {
-    pushStyle();  
+    pushStyle();
+    rectMode(CORNER);
     fill(200, 50); 
     stroke(0);
     strokeWeight(3);
-    rectMode(CORNER);
     fill(255);
     rect(x, y, w, h);
 
     float rowHeight = h / numRows;
-    fill(200, 100, 100); 
+    fill(63, 157, 255); 
     stroke(0);
     strokeWeight(3);
     rect(x, y, w, rowHeight);
 
-
+    // Dibuixa files
     stroke(0);
     for (int r = 1; r <numRows; r++) {
       if (r==1) { 
@@ -57,17 +57,19 @@ class Tabla {
       line(x, y + r*rowHeight, x + w, y + r*rowHeight);
     }
 
-
+    // Dibuixa Columnes
     float xCol = x;
     for (int c = 0; c<numCols; c++) {
       xCol += w*columnWidths[c]/100.0;
       line(xCol, y, xCol, y + h);
     }
 
+    // Dibuixa textos
 
     fill(0); 
-    textSize(16); 
+    textSize(24); 
     textAlign(LEFT);
+
     for (int r = 0; r <= tableData.length; r++) {
       xCol = x;
       for (int c = 0; c< numCols; c++) {
