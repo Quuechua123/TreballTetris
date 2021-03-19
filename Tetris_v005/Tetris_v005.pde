@@ -2,6 +2,7 @@
 //Libreria de MySQL y Processing
 import de.bezier.data.sql.*;
 
+String fecha = "2021-03-16 18:33:05";
 
 Tabla ta;
 
@@ -34,6 +35,7 @@ void setup() {
 
   figs = new FigList();
   figActual = figs.nextFigura();
+  
 }
 
 

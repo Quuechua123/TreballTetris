@@ -42,7 +42,7 @@ String[][] getInfoTablaPartida() {
   while (msql.next()) {
     data[nr][0] = msql.getString("Nombre");
     data[nr][1] = String.valueOf(msql.getInt("Puntuacion"));
-    data[nr][2] = msql.getString("Fecha") ;
+    data[nr][2] = formataFecha(msql.getString("Fecha")) ;
     nr++;
   }
   return data;
