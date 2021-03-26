@@ -27,7 +27,11 @@ int filas = 10, columnas = 3;
 String[] headers = {"Nombre", "Puntuación", "Fecha"};
 float[] colWidths = {25, 25, 50};
 
+PopUp p;
+float popW = 600, popH = 340;
 
+String title = "Puntuación guardada?";
+String message = "La puntuación se ha guardado correctamente";
 
 
 // Creación de los elementos de la GUI
@@ -38,6 +42,7 @@ void setGUI() {
   valoresInicialesTeclas();
   initCheckBox();
   initContador();
+  initPopUp();
 }
 
 // Creación de los botones de la GUI
@@ -84,4 +89,8 @@ void crearTabla() {
   String[][] info = getInfoTablaPartida();
   tabla.setData(info);
   tabla.setColumnWidths(colWidths);
+}
+
+void initPopUp(){
+  p = new PopUp(title, message, width/3, height/3, popW, popH);
 }
