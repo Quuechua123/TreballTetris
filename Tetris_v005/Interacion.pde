@@ -31,6 +31,8 @@ void keyPressed() {
   } else if (key==guardarPieza) {
     println("Guardar");
   }
+  
+   n.keyPressed(key, (int)keyCode); 
 }
 
 void mousePressed() {
@@ -96,4 +98,29 @@ void mousePressed() {
   } else if (volumen.mouseOverButtons()) {
     volumen.update();
   }
+  else if (c.visible && c.bAceptar.mouseOverButton() && c.bAceptar.enabled){
+    c.setVisible(false);
+    // Guardar puntuación en BBDD
+    String jugador  = n.text;
+    String puntos   = String.valueOf(numLinies);
+    String modalidad = "1";
+    if(Seleccion.selectedValue.equals("Normal")){ modalidad="1";}
+    else if(Seleccion.selectedValue.equals("Difícil")){ modalidad="2";}
+    else { modalidad="3";}
+    insertPuntacion(jugador, puntos, modalidad);
+    p.setVisible(true);
+    String[][] info = getInfoTablaPartida();
+    tabla.setData(info);
+  }
+  else if(c.visible && c.bCancelar.mouseOverButton() && c.bCancelar.enabled){
+    c.setVisible(false);
+    // Descartar puntuación
+  }
+  else if(p.visible && p.bAceptar.mouseOverButton() && p.bAceptar.enabled){
+    p.setVisible(false);
+  }
+
+  n.isPressed();
+   
+
 }

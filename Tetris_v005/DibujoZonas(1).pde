@@ -17,8 +17,7 @@ void dibujoZonaCentral() {
   text("Caida Suave", width/2-150, 420);
   text("Caida Rápida", width/2-150, 470);
   text("Guardar pieza", width/2-150, 520);
-  text("Volumen de la Música", width/2-130, 615);
-  text("Insert nombre usuario", width/2-130, 750);
+  text("Volumen de la Música", width/2-130, 730);
 
   popStyle();
 }

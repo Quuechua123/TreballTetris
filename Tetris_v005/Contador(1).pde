@@ -11,7 +11,7 @@ class Contador {
   // Colors de farciment i contorn
   color fillColor, strokeColor;
 
-  PImage iconoMas, iconoMenos;    
+  PImage iconoMas, iconoMenos;      
 
 
   // Mètode Constructor

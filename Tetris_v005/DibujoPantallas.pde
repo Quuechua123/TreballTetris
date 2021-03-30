@@ -15,7 +15,6 @@ void dibujaPantallaJuego() {
   bJugar.setEnabled(false);
   bConfig.setEnabled(false);
   dibujoTablasPiezas();
-  p.display();
 }
 
 void dibujaPantallaAjustes() {
@@ -33,4 +32,7 @@ void dibujaPantallaAjustes() {
   moveLeft.display();
   moveRight.display();
   bReset.display();
+  n.display();
+  b1.display();
+  b2.display();
 }

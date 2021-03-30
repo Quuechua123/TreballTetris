@@ -52,6 +52,7 @@ void draw() {
   case JUGAR:
     dibujaPantallaJuego(); 
     jugar();
+    
     break;
   case CONFIG: 
     dibujaPantallaAjustes(); 
@@ -79,6 +80,7 @@ void jugar() {
       if (figActual.fila==0) {
         println("Partida acabada!!");
         gameOver = true;
+        c.setVisible(true);
       } else {
         // Añadir figura al tauler
         t.anadirFigura(figActual);
@@ -102,15 +104,20 @@ void jugar() {
   } else {
     // Si la partida ha acabado
     pushStyle();
-    fill(0); 
-    textAlign(CENTER);
-    textSize(200);
-    textFont(font2);
-    text("GAME OVER", width/2-40, height/3);
-    // Número de figuras colocadas
-    text("FIGURAS:"+t.getNumFiguras(), width/2-40, height/3 + 150);
-    // Número de líneas
-    text("LINEAS:"+numLinies, width/2-40, height/3+300);
+      fill(0); 
+      textAlign(CENTER);
+      textSize(200);
+      textFont(font2);
+      text("GAME OVER", width/2-40, height/3);
+      // Número de figuras colocadas
+      text("FIGURAS:"+t.getNumFiguras(), width/2-40, height/3 + 150);
+      // Número de líneas
+      text("LINEAS:"+numLinies, width/2-40, height/3+300);
     popStyle();
+    
+
   }
+  
+  p.display();
+  c.display();
 }

@@ -15,10 +15,10 @@ void conecta() {
   // Si la connexió s'ha establert
   if (msql.connect()) {
     // La connexió s'ha establert correctament
-    println("Connexió establerta :)");
+    println("Conexión establecida :)");
   } else {
     // La connexió ha fallat!!!
-    println("Error de Connexió :(");
+    println("Error de Conexión :(");
   }
 }
 
@@ -48,17 +48,9 @@ String[][] getInfoTablaPartida() {
   return data;
 }
 
-String[] getNomsTablaUnidad() {
 
-  int numRows = getNumRowsTabla("unitat");
-
-  String[] data = new String[numRows];
-
-  int nr=0;
-  msql.query( "SELECT nom FROM unitat" );
-  while (msql.next()) {
-    data[nr] = msql.getString("nom");
-    nr++;
-  }
-  return data;
+void insertPuntacion(String usuario, String puntos, String modalidad){
+  String q = "INSERT INTO Partida(Nombre, Puntuacion, Modalidad_idModalidad) VALUES('"+usuario+"','"+puntos+"','"+modalidad+"')";
+  println(q);
+  msql.query(q);
 }

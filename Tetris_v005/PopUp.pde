@@ -57,7 +57,8 @@ class PopUp {
      pushStyle();
      
      // Rectangle
-     stroke(0); strokeWeight(10);fill(200, 200, 100);
+     stroke(0); strokeWeight(5);fill(200, 200, 100);
+     rectMode(CORNER);
      rect(x, y, w, h, b/2);
      
      line(x, y + 2*b , x+w, y + 2*b);
@@ -73,6 +74,7 @@ class PopUp {
      // Botó d'Acceptar
      bAceptar.display();
      popStyle();
+     rectMode(CENTER);
    }
  }
  

@@ -1,5 +1,5 @@
 // Botones del Menú Principal
-Button bJugar, bConfig, bSalida, bReset;
+Button bJugar, bConfig, bSalida, bReset, b1, b2;
 
 //Botones menu configurción
 Select moveRight, moveLeft, rotateRight, rotateLeft, softDrop, hardDrop, hold, Seleccion;
@@ -30,9 +30,17 @@ float[] colWidths = {25, 25, 50};
 PopUp p;
 float popW = 600, popH = 340;
 
-String title = "Puntuación guardada?";
+String title = "Puntuación guardada!";
 String message = "La puntuación se ha guardado correctamente";
 
+Confirm c;
+float comW = 600, comH = 340;
+
+String ctitle = "Puntuación guardada?";
+String cmessage = "¿Desea guardar la puntuación?";
+
+TextField n;   
+int compW = 240, compH = 50;
 
 // Creación de los elementos de la GUI
 void setGUI() {
@@ -43,6 +51,8 @@ void setGUI() {
   initCheckBox();
   initContador();
   initPopUp();
+  initConfirm();
+  initTextField();
 }
 
 // Creación de los botones de la GUI
@@ -53,6 +63,8 @@ void initButtons() {
   bConfig.setEnabled(false);
   bSalida = new Button("Salida", width-200, height-200, buttonW2, buttonH2);
   bReset = new Button("Resetear Ajustes", width/2-165, 900, 350, 50);
+  b1 = new Button("Inserir", width/2-260, 3*height/4, compW, compH);
+  b2 = new Button("Reset", 2*width/4+20, 3*height/4, compW, compH);
 }
 
 void initSelect() {
@@ -73,7 +85,7 @@ void initCheckBox() {
 }
 
 void initContador() {
-  volumen = new Contador(iconoMas, iconoMenos, width/2+50, 700, contadorW, contadorH);
+  volumen = new Contador(iconoMas, iconoMenos, width/2+50, 590, contadorW, contadorH);
 }
 
 // Activar els botons del menú
@@ -92,5 +104,15 @@ void crearTabla() {
 }
 
 void initPopUp(){
-  p = new PopUp(title, message, width/3, height/3, popW, popH);
+  p = new PopUp(title, message, width/8-225, height-600, popW, popH);
+  p.setVisible(false);
+}
+
+void initConfirm(){
+  c = new Confirm(ctitle, cmessage, width/8-225, height-600, comW, comH);
+  c.setVisible(false);
+}
+
+void initTextField(){
+  n = new TextField(width/2+50, 720, compW, compH);
 }
